@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     const contactEmail = process.env.CONTACT_EMAIL || "signhere@signaturebytundeo.com";
 
     await resend.emails.send({
-      from: "Signature By Tunde O <onboarding@resend.dev>",
+      from: "Signature By Tunde O <noreply@signaturebytundeo.com>",
       to: contactEmail,
       replyTo: email,
       subject: `New Inquiry: ${serviceLabels[service] || service} — ${name}`,
