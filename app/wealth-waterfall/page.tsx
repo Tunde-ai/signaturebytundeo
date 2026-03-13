@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import InsuranceInquiryForm from "@/components/InsuranceInquiryForm";
 
 export const metadata: Metadata = {
   title: "Family Wealth Waterfall | Signature By Tunde O",
@@ -264,24 +265,92 @@ export default function WealthWaterfall() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-navy-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-heading font-bold text-cream mb-6">
-            Start Building Your{" "}
-            <span className="text-gold">Wealth Waterfall</span>
-          </h2>
-          <p className="text-slate mb-10 max-w-xl mx-auto">
-            Every family&apos;s situation is unique. Book a free consultation to
-            learn how a customized Wealth Waterfall strategy can protect your
-            family&apos;s future.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-gold text-navy px-10 py-4 rounded font-semibold text-lg hover:bg-gold-light transition-colors"
-          >
-            Book Your Free Consultation
-          </Link>
+      {/* Inquiry Form */}
+      <section id="get-started" className="py-20 bg-navy-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            <div className="lg:col-span-3">
+              <div className="bg-navy border border-gold/20 rounded-lg p-8">
+                <h2 className="text-2xl font-heading font-bold text-cream mb-2">
+                  Start Your Wealth Waterfall
+                </h2>
+                <p className="text-slate text-sm mb-8">
+                  Share a few details and Tunde will reach out with a
+                  personalized strategy for your family.
+                </p>
+                <InsuranceInquiryForm />
+              </div>
+            </div>
+
+            <div className="lg:col-span-2 space-y-6">
+              <div className="bg-navy border border-gold/20 rounded-lg p-6">
+                <h3 className="text-lg font-heading font-bold text-cream mb-4">
+                  What Happens Next
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    {
+                      step: "1",
+                      title: "Submit your inquiry",
+                      desc: "Tell us about your goals and family situation",
+                    },
+                    {
+                      step: "2",
+                      title: "Free consultation call",
+                      desc: "Tunde reviews your info and calls within 24 hours",
+                    },
+                    {
+                      step: "3",
+                      title: "Personalized strategy",
+                      desc: "Receive a custom Wealth Waterfall plan with real numbers",
+                    },
+                    {
+                      step: "4",
+                      title: "Implementation",
+                      desc: "We help you put the plan into action, step by step",
+                    },
+                  ].map((item) => (
+                    <div key={item.step} className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-gold/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-gold text-xs font-bold">
+                          {item.step}
+                        </span>
+                      </div>
+                      <div>
+                        <p className="text-cream text-sm font-medium">
+                          {item.title}
+                        </p>
+                        <p className="text-slate text-xs">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-navy border border-gold/30 rounded-lg p-6 text-center">
+                <div className="text-gold text-2xl mb-2">&#9733;</div>
+                <p className="text-cream text-sm font-semibold">
+                  Licensed Insurance Agent
+                </p>
+                <p className="text-slate text-xs mt-1">
+                  Life &amp; Variable Contracts
+                </p>
+                <p className="text-slate text-xs">FL License #G307436</p>
+              </div>
+
+              <div className="bg-navy border border-gold/20 rounded-lg p-6 text-center">
+                <p className="text-slate text-sm mb-3">
+                  Prefer to talk first?
+                </p>
+                <a
+                  href="tel:+17865911354"
+                  className="text-gold font-semibold hover:text-gold-light transition-colors"
+                >
+                  (786) 591-1354
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

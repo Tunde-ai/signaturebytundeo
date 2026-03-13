@@ -63,7 +63,14 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-3 text-slate text-sm">
-              <li>Florida, United States</li>
+              <li>
+                <a
+                  href="tel:+17865911354"
+                  className="hover:text-gold transition-colors"
+                >
+                  (786) 591-1354
+                </a>
+              </li>
               <li>
                 <a
                   href="mailto:signhere@signaturebytundeo.com"
@@ -72,8 +79,12 @@ export default function Footer() {
                   signhere@signaturebytundeo.com
                 </a>
               </li>
+              <li>Florida, United States</li>
             </ul>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="inline-block text-xs text-gold/60 border border-gold/30 rounded px-3 py-1">
+                FL Insurance License #G307436
+              </span>
               <span className="inline-block text-xs text-gold/60 border border-gold/30 rounded px-3 py-1">
                 FL Notary Commission #HH389868
               </span>

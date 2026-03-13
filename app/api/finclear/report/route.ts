@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 
 const FINCLEAR_SYSTEM_PROMPT = `You are FinClear AI, a professional financial analyst assistant built into the FinClear client-accountant portal by Signature By Tunde O.
 
@@ -83,18 +82,41 @@ Then provide:
 ## Transaction Data
 ${transactionData}`;
 
-    const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 2000,
-      system: FINCLEAR_SYSTEM_PROMPT,
-      messages: [{ role: "user", content: userPrompt }],
-    });
+    const accountId = process.env.CLOUDFLARE_ACCOUNT_ID!;
+    const apiToken = process.env.CLOUDFLARE_API_TOKEN!;
+    const model = "@cf/meta/llama-3.1-8b-instruct";
 
-    const textContent = response.content.find((block) => block.type === "text");
-    const report = textContent
-      ? textContent.text
-      : "Unable to generate report. Please try again.";
+    const res = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiToken}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: [
+            { role: "system", content: FINCLEAR_SYSTEM_PROMPT },
+            { role: "user", content: userPrompt },
+          ],
+          max_tokens: 2000,
+          temperature: 0.3,
+        }),
+      }
+    );
+
+    const data = await res.json();
+
+    if (!data.success) {
+      console.error("Cloudflare AI error:", data.errors);
+      throw new Error(
+        data.errors?.[0]?.message || "Cloudflare AI request failed"
+      );
+    }
+
+    const report =
+      data.result?.response ||
+      "Unable to generate report. Please try again.";
 
     return NextResponse.json({ report });
   } catch (error) {

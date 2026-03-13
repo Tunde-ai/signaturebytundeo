@@ -73,6 +73,25 @@ export default function Contact() {
                   </p>
                   <div className="space-y-4">
                     <a
+                      href="tel:+17865911354"
+                      className="flex items-center gap-3 text-cream hover:text-gold transition-colors"
+                    >
+                      <svg
+                        className="w-5 h-5 text-gold"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
+                      </svg>
+                      <span className="text-sm">(786) 591-1354</span>
+                    </a>
+                    <a
                       href="mailto:signhere@signaturebytundeo.com"
                       className="flex items-center gap-3 text-cream hover:text-gold transition-colors"
                     >
@@ -167,16 +186,30 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Notary Badge */}
-              <div className="bg-navy-light border border-gold/30 rounded-lg p-6 text-center">
-                <div className="text-gold text-2xl mb-2">&#9733;</div>
-                <p className="text-cream text-sm font-semibold">
-                  Florida Notary Public
-                </p>
-                <p className="text-slate text-xs mt-1">
-                  Commission #HH389868
-                </p>
-                <p className="text-slate text-xs">Expires May 4, 2027</p>
+              {/* Credentials Badges */}
+              <div className="space-y-4">
+                <div className="bg-navy-light border border-gold/30 rounded-lg p-6 text-center">
+                  <div className="text-gold text-2xl mb-2">&#9733;</div>
+                  <p className="text-cream text-sm font-semibold">
+                    Licensed Insurance Agent
+                  </p>
+                  <p className="text-slate text-xs mt-1">
+                    Life &amp; Variable Contracts
+                  </p>
+                  <p className="text-slate text-xs">
+                    FL License #G307436
+                  </p>
+                </div>
+                <div className="bg-navy-light border border-gold/30 rounded-lg p-6 text-center">
+                  <div className="text-gold text-2xl mb-2">&#9733;</div>
+                  <p className="text-cream text-sm font-semibold">
+                    Florida Notary Public
+                  </p>
+                  <p className="text-slate text-xs mt-1">
+                    Commission #HH389868
+                  </p>
+                  <p className="text-slate text-xs">Expires May 4, 2027</p>
+                </div>
               </div>
             </div>
           </div>

@@ -188,12 +188,13 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-slate leading-relaxed">
                 <p>
-                  Tunde O is a dedicated wealth strategist and licensed Florida
-                  Notary Public committed to helping families build and protect
-                  generational wealth. With deep expertise in insurance-based
-                  wealth strategies, Tunde developed the Family Wealth Waterfall
-                  &mdash; a proven approach that combines life insurance, trusts,
-                  and strategic planning.
+                  Tunde O is a dedicated wealth strategist, licensed Florida
+                  Life &amp; Variable Contracts Insurance Agent, and commissioned
+                  Florida Notary Public committed to helping families build and
+                  protect generational wealth. With deep expertise in
+                  insurance-based wealth strategies, Tunde developed the Family
+                  Wealth Waterfall &mdash; a proven approach that combines life
+                  insurance, trusts, and strategic planning.
                 </p>
                 <p>
                   Every family deserves a financial legacy. Tunde works
@@ -202,21 +203,23 @@ export default function Home() {
                   you, but your children and grandchildren.
                 </p>
               </div>
-              <div className="mt-8 flex items-center gap-6">
+              <div className="mt-8 flex items-center gap-6 flex-wrap">
                 <div className="text-center">
                   <div className="text-3xl font-heading font-bold text-gold">
                     FL
                   </div>
                   <div className="text-xs text-slate mt-1">
-                    Licensed Notary
+                    Licensed Insurance Agent
                   </div>
                 </div>
                 <div className="w-px h-12 bg-gold/20" />
                 <div className="text-center">
                   <div className="text-3xl font-heading font-bold text-gold">
-                    100%
+                    FL
                   </div>
-                  <div className="text-xs text-slate mt-1">Client Focused</div>
+                  <div className="text-xs text-slate mt-1">
+                    Notary Public
+                  </div>
                 </div>
                 <div className="w-px h-12 bg-gold/20" />
                 <div className="text-center">

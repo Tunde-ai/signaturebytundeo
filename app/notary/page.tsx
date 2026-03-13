@@ -57,7 +57,7 @@ export default function Notary() {
             </h2>
             <p className="text-slate max-w-2xl mx-auto">
               Professional notarization for all your important documents.
-              Available for in-person and mobile appointments.
+              Available in-person, mobile, or fully remote online.
             </p>
           </div>
 
@@ -139,6 +139,116 @@ export default function Notary() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section className="py-20 bg-navy-light">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-heading font-bold text-cream mb-4">
+              Transparent Pricing
+            </h2>
+            <p className="text-slate max-w-2xl mx-auto">
+              No hidden fees. Know exactly what to expect before you book.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Standard Notarization",
+                price: "$10",
+                unit: "per signature",
+                description:
+                  "In-office notarization of any document at our Fort Lauderdale location.",
+                features: [
+                  "Per Florida statute",
+                  "Walk-ins welcome",
+                  "Same-day available",
+                ],
+              },
+              {
+                title: "Mobile Notary",
+                price: "$25",
+                unit: "travel fee + $10/sig",
+                description:
+                  "We come to you anywhere in the South Florida area.",
+                features: [
+                  "Home or office visits",
+                  "Evenings available",
+                  "Broward & Miami-Dade",
+                ],
+              },
+              {
+                title: "Loan Signing",
+                price: "$150",
+                unit: "per package",
+                description:
+                  "Complete loan signing package for real estate closings and refinances.",
+                features: [
+                  "Full document package",
+                  "Mobile included",
+                  "Same-day turnaround",
+                ],
+              },
+              {
+                title: "Remote Online (RON)",
+                price: "$10",
+                unit: "per signature",
+                description:
+                  "Notarize from anywhere via secure video call. Scan, email, done.",
+                features: [
+                  "No travel needed",
+                  "Available statewide",
+                  "Same-day available",
+                ],
+              },
+            ].map((tier, i) => (
+              <div
+                key={i}
+                className="bg-navy border border-gold/20 rounded-lg p-6 flex flex-col"
+              >
+                <h3 className="text-lg font-heading font-bold text-cream mb-2">
+                  {tier.title}
+                </h3>
+                <div className="mb-3">
+                  <span className="text-3xl font-heading font-bold text-gold">
+                    {tier.price}
+                  </span>
+                  <span className="text-slate text-xs ml-2">{tier.unit}</span>
+                </div>
+                <p className="text-slate text-sm mb-4 flex-grow">
+                  {tier.description}
+                </p>
+                <ul className="space-y-2">
+                  {tier.features.map((feature, j) => (
+                    <li key={j} className="flex items-center gap-2 text-sm">
+                      <svg
+                        className="w-4 h-4 text-gold flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span className="text-slate">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-slate/50 text-xs text-center mt-8">
+            Standard notarization fees set per Florida Statute 117.05. Travel
+            fees may vary based on distance. All prices subject to change.
+          </p>
+        </div>
+      </section>
+
       {/* Why Choose */}
       <section className="py-20 bg-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,9 +263,9 @@ export default function Notary() {
                   "Fully commissioned by the State of Florida with all required bonding and insurance.",
               },
               {
-                title: "Mobile Service",
+                title: "Mobile & Remote",
                 description:
-                  "Can't come to us? We'll come to you. Mobile notary service available across Florida.",
+                  "Can't come to us? We'll come to you — or notarize fully online via secure video call from anywhere in Florida.",
               },
               {
                 title: "Fast Turnaround",
@@ -200,7 +310,7 @@ export default function Notary() {
               Schedule Notary Appointment
             </Link>
             <a
-              href="mailto:tunde@signaturebytundeo.com"
+              href="mailto:signhere@signaturebytundeo.com"
               className="border border-gold/50 text-gold px-10 py-4 rounded font-semibold text-lg hover:bg-gold/10 transition-colors w-full sm:w-auto"
             >
               Email Us
